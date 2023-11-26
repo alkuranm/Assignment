@@ -1,0 +1,6 @@
+{
+  "classificationRules": [
+    {"domain": "financial", "indicators": ["creditcard", "bankaccount"]},
+    {"domain": "healthcare", "indicators": ["medicalinsurance"]}
+  ]
+}
