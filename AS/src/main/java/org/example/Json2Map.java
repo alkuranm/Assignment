@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class Json2Map implements Mapper {
     @Override
     public HashMap<String, String> mapper(String PathJson) {
-        HashMap<String, String> map = new HashMap<String,String>();
+        HashMap<String, String> indicators2Domain = new HashMap<String,String>();
         try (Reader reader = new FileReader(PathJson)) {
             JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
             JsonArray classesArray = jsonObject.getAsJsonArray("classificationRules");
@@ -25,13 +25,13 @@ public class Json2Map implements Mapper {
 
                 for (int j = 0; j < indicators.size(); j++) {
                     JsonPrimitive indicator = indicators.get(j).getAsJsonPrimitive();
-                    map.put(indicator.getAsString(), domain);
+                    indicators2Domain.put(indicator.getAsString(), domain);
                 }
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return map;
+        return indicators2Domain;
     }
 }

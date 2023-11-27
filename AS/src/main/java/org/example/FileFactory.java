@@ -21,7 +21,6 @@ public class FileFactory {
                     return new ReadFileTxt();
                 case "csv":
                     return new ReadFileCSV() ;
-                // Add more file types as needed
                 default:
                     return null;
             }

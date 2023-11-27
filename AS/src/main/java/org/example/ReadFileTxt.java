@@ -7,11 +7,11 @@ import java.io.IOException;
 public class ReadFileTxt implements ReadFile{
     @Override
     public String[] read(String path2File, int lineNumberToRead) {
-        try (BufferedReader br = new BufferedReader(new FileReader(path2File))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path2File))) {
             String line;
             int currentLineNumber = 0;
 
-            while ((line = br.readLine()) != null) {
+            while ((line = bufferedReader.readLine()) != null) {
 
                 if (currentLineNumber == lineNumberToRead) {
                     return line.split(" ");

@@ -9,11 +9,11 @@ public class ReadFileCSV implements ReadFile{
 
     @Override
     public String[] read(String path2File, int lineNumberToRead) {
-        try (CSVReader reader  = new CSVReader(new FileReader(path2File))) {
+        try (CSVReader CSVreader  = new CSVReader(new FileReader(path2File))) {
             String[] line;
             int currentLineNumber = 0;
-            while ((line = reader.readNext()) != null && currentLineNumber <= lineNumberToRead) {
-                // If the current line number is the desired line, print the values
+            while ((line = CSVreader.readNext()) != null && currentLineNumber <= lineNumberToRead) {
+
                 if (currentLineNumber == lineNumberToRead) {
                     return line;
                 }

@@ -3,7 +3,6 @@ package org.example;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Map;
 
 
 public class Main {
@@ -20,7 +19,7 @@ public class Main {
         ReadFile reader = file.getInstance(Path2File);
 
         //
-        Classify classify = new SetFiller();
+        Classifier classify = new SetFiller();
         Set<String> foundDomainsSet = new HashSet<>();
 
         boolean isTextFinished = false;
