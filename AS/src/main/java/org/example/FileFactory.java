@@ -1,26 +1,22 @@
 package org.example;
 
-import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class FileFactory {
-    public ReadFile getInstance(String pathFile){
+    public Reader getInstance(String pathFile){
 
         Path path = Paths.get(pathFile);
-        String fileName = path.getFileName().toString();
+        String extractedFileName = path.getFileName().toString();
 
-        // Get the file extension
-        int lastDotIndex = fileName.lastIndexOf('.');
+        int lastDotIndex = extractedFileName.lastIndexOf('.');
         if (lastDotIndex > 0) {
-            String fileExtension = fileName.substring(lastDotIndex + 1).toLowerCase();
-
-            // Map file extensions to file types
+            String fileExtension = extractedFileName.substring(lastDotIndex + 1).toLowerCase();
             switch (fileExtension) {
                 case "txt":
-                    return new ReadFileTxt();
+                    return new TxtFileReader();
                 case "csv":
-                    return new ReadFileCSV() ;
+                    return new CsvFileReader() ;
                 default:
                     return null;
             }

@@ -4,10 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ReadFileTxt implements ReadFile{
+public class TxtFileReader implements Reader {
     @Override
-    public String[] read(String path2File, int lineNumberToRead) {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path2File))) {
+    public String[] ReadFile(String filePath, int lineNumberToRead) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
             String line;
             int currentLineNumber = 0;
 
@@ -19,10 +19,8 @@ public class ReadFileTxt implements ReadFile{
                 currentLineNumber++;
             }
         } catch (IOException e) {
-            // Handle file reading exception
             e.printStackTrace();
         }
-        // if we finsh the file
         return null;
     }
 }

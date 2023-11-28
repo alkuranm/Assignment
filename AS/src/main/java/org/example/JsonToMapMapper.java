@@ -9,11 +9,11 @@ import java.io.FileReader;
 import java.io.Reader;
 import java.util.HashMap;
 
-public class Json2Map implements Mapper {
+public class JsonToMapMapper implements Mapper {
     @Override
-    public HashMap<String, String> mapper(String PathJson) {
+    public HashMap<String, String> mapJsonFileToHashMap(String jsonFilePath) {
         HashMap<String, String> indicators2Domain = new HashMap<String,String>();
-        try (Reader reader = new FileReader(PathJson)) {
+        try (Reader reader = new FileReader(jsonFilePath)) {
             JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
             JsonArray classesArray = jsonObject.getAsJsonArray("classificationRules");
             for (int  i = 0; i < classesArray.size(); i++) {

@@ -1,0 +1,9 @@
+{
+  "classificationRules": [
+    {"domain": "financial", "indicators": ["creditcard", "bankaccount"]},
+    {"domain": "healthcare", "indicators": ["medicalinsurance"]},
+    {"domain": "technology", "indicators": ["patents", "software"]},
+    {"domain": "education", "indicators": ["studentloans", "academicrecords"]},
+    {"domain": "travel", "indicators": ["passport", "flighttickets"]}
+  ]
+}
