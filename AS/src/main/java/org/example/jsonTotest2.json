@@ -1,0 +1,9 @@
+{
+  "classificationRules": [
+    {"domain": "automotive", "indicators": ["carinsurance", "maintenancehistory"]},
+    {"domain": "entertainment", "indicators": ["movietickets", "streamingservices"]},
+    {"domain": "real estate", "indicators": ["mortgage", "propertytax"]},
+    {"domain": "food", "indicators": ["groceryreceipts", "restaurantbills"]},
+    {"domain": "sports", "indicators": ["tickets", "sportsmerchandise"]}
+  ]
+}
