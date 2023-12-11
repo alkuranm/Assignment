@@ -20,8 +20,7 @@ public class CsvFileReader implements Reader {
 
             }
         } catch (CsvValidationException | IOException e) {
-            // Handle file reading exception
-            e.printStackTrace();
+            throw new RuntimeException("Error reading the file at line " + lineNumberToRead + ": " + e.getMessage(), e);
         }
         return null;
     }

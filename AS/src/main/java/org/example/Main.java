@@ -14,27 +14,27 @@ public class Main {
 
         //Class JSON
         Mapper jsonMapper = new JsonToMapMapper();
-        HashMap<String, String> Indicators2Domain= jsonMapper.mapJsonFileToHashMap(jsonFilePath);
+        HashMap<String, String> indicatorsToDomain= jsonMapper.mapJsonFileToHashMap(jsonFilePath);
         FileFactory fileFactory  = new FileFactory();
         Reader fileReader  = fileFactory.getInstance(txtOrCsvFilePath);
 
         //
-        Classifier classify = new FoundDomainsSetFiller();
-        Set<String> foundDomainsSet = new HashSet<>();
+        Classifier classify = new FounderDomains();
+        Set<String> foundDomains = new HashSet<>();
 
         boolean isTextFinished = false;
         int i = 0;
         while (!isTextFinished) {
-            String[] wordsFromReadLine = fileReader.ReadFile(txtOrCsvFilePath, i);
-            if (wordsFromReadLine == null) {
+            String[] wordsArray = fileReader.ReadFile(txtOrCsvFilePath, i);
+            if (wordsArray == null) {
                 isTextFinished = true;
             } else {
-                classify.foundDomainsSetFill(foundDomainsSet, Indicators2Domain, wordsFromReadLine);
+                classify.identifyAndCollectDomains(foundDomains, indicatorsToDomain, wordsArray);
             }
             i++;
         }
 
-        for (String item : foundDomainsSet) {
+        for (String item : foundDomains) {
             System.out.println(item );
         }
     }

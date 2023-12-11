@@ -4,5 +4,5 @@ import java.util.HashMap;
 import java.util.Set;
 
 public interface Classifier {
-    public void foundDomainsSetFill(Set<String> foundDomainsSet, HashMap<String, String> indicatorsToDomain, String[] wordsReadLine);
+    public void identifyAndCollectDomains(Set<String> foundDomains, HashMap<String, String> indicatorsToDomain, String[] wordsArray);
 }

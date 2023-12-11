@@ -19,7 +19,7 @@ public class TxtFileReader implements Reader {
                 currentLineNumber++;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error reading the file at line " + lineNumberToRead + ": " + e.getMessage(), e);
         }
         return null;
     }
